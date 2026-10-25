@@ -65,6 +65,7 @@ class T11_ApplicationTest extends TestCase
                 'comment' => '勤怠を修正します',
             ]);
 
+        //Testでのバリデーションエラーメッセージと機能要件のバリデーションエラーメッセージが異なっているため機能要件に合わせてます。
         $response->assertSessionHasErrors([
             'new_clock_in' => '出勤時間もしくは退勤時間が不適切な値です',
         ]);

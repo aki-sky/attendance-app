@@ -77,14 +77,6 @@ sail artisan test
 - ユーザー2（一般）: user2@example.com / password
 - ユーザー3（管理者）: user3@example.com / password
 
-## 使用技術
-
-- PHP 8.2
-- Laravel 10.x
-- MySQL
-- Docker / Laravel Sail
-- Tailwind CSS
-
 ## APIエンドポイント一覧
 
 | メソッド | パス                                          | 概要           |
@@ -94,6 +86,32 @@ sail artisan test
 | POST     | /api/v1/attendance-records                    | 勤怠を新規登録 |
 | PUT      | /api/v1/attendance-records/{attendanceRecord} | 勤怠を更新     |
 | DELETE   | /api/v1/attendance-records/{attendanceRecord} | 勤怠を削除     |
+
+## Bladeファイルの変更
+
+管理者の承認ページで空の休憩が表示されてしまう。  
+admin-application-detail.bladeの49行目からの下記部分は不要と考え削除。
+
+```
+{{-- Figma に合わせ、末尾に空の休憩スロットを1つ表示 --}}
+
+<div class="applied-form__group">
+<label class="applied-form__header">{{ $application->proposalBreaks->count() === 0 ? '休憩' : '休憩' . ($application->proposalBreaks->count() + 1) }}</label>
+<div class="applied-form__input-group">
+<input class="applied-form__input readonly" type="text" value="" readonly>
+<p>〜</p>
+<input class="applied-form__input readonly" type="text" value="" readonly>
+</div>
+</div>
+```
+
+## 使用技術
+
+- PHP 8.2
+- Laravel 10.x
+- MySQL
+- Docker / Laravel Sail
+- Tailwind CSS
 
 ## 開発環境URL
 
