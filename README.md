@@ -28,7 +28,7 @@
 
 ```
 1. リポジトリをクローン
-   git clone git@github.com:aki-sky/contact-form-app.git
+   git clone git@github.com:aki-sky/attendance-app.git
 
 2. .envファイルの準備
    cp .env.example .env
@@ -115,7 +115,20 @@ admin-application-detail.bladeの49行目からの下記部分は不要と考え
 
 ## 開発環境URL
 
-http://localhost
+スタッフ用会員登録画面
+http://localhost/register
+
+スタッフ用ログイン画面
+http://localhost/login
+
+スタッフ用勤怠登録画面
+http://localhost/attendance
+
+管理者用ログイン画面
+http://localhost/admin/login
+
+管理者用勤怠一覧画面
+http://localhost/admin/attendance/list
 
 ## 作成者
 
